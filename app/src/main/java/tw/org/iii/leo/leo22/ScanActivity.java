@@ -17,15 +17,18 @@ public class ScanActivity extends AppCompatActivity
 
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mScannerView = new ZXingScannerView(this);
-        // this paramter will make your HUAWEI phone works great!
-        mScannerView.setAspectTolerance(0.5f);
+//        mScannerView = new ZXingScannerView(this);
 
-        setContentView(mScannerView);
-        //setContentView(R.layout.activity_scan);
+//        mScannerView.setAspectTolerance(0.5f);       // this paramter will make your HUAWEI phone works great!
+//        setContentView(mScannerView);
+        setContentView(R.layout.activity_scan);
+        mScannerView = findViewById(R.id.scanner);
+        mScannerView.setAspectTolerance(0.5f);       // this paramter will make your HUAWEI phone works great!
     }
 
     @Override
@@ -46,8 +49,8 @@ public class ScanActivity extends AppCompatActivity
     @Override
     public void handleResult(Result rawResult) {
         // Do something with the result here
-//        Log.v("leo", rawResult.getText()); // Prints scan results
-//        Log.v("leo", rawResult.getBarcodeFormat().toString()); // Prints the scan format (qrcode, pdf417 etc.)
+        Log.v("leo", rawResult.getText()); // Prints scan results
+        Log.v("leo", rawResult.getBarcodeFormat().toString()); // Prints the scan format (qrcode, pdf417 etc.)
 
 
         //重置相機
