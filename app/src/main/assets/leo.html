@@ -1,0 +1,15 @@
+<script>
+<!--按下按鈕 呼叫java中的MyJS物件（物件名稱為leo) 中的formJS方法-->
+    function scan(){
+        leo.fromJS();
+    }
+    function showCode(code2){
+        code.value = code2;
+    }
+
+
+</script>
+
+
+<input type = "text" id="code"/>
+<input type = "button" onclick="scan()" value="Scan"/>
